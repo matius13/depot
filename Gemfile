@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 gem 'mysql2', '~> 0.3.11'
 
 gem 'capistrano'
+gem 'rvm-capistrano'
 
 # Gems used only for assets and not required
 # in production environments by default.
