@@ -44,3 +44,10 @@ namespace :deploy do
       rake db:seed RAILS_ENV=#{rails_env}"
   end
 end
+
+desc "symlink database.yml"
+task :symlink_database_yml do
+  run "ln -fs #{shared_path}/database.yml #{current_path}/config/database.yml"
+end
+
+after "deploy:create_symlink", "symlink_database_yml"
