@@ -2,7 +2,7 @@
 require 'bundler/capistrano'
 # be sure to change these
 set :user, 'szkolenie'
-set :domain, 'depot_produkcyjny.pl'
+set :domain, 'depot.szkolenie.com'
 set :application, 'depot'
  
 # adjust if you are using RVM, remove if you are not
@@ -11,8 +11,8 @@ set :rvm_ruby_string, '1.9.3'
 set :rvm_type, :user
  
 # file paths
-set :repository,  "https://github.com/matius13/depot.git" 
-set :deploy_to, "/home/szkolenie/depot_produkcyjny" 
+set :repository, "git@github.com:matius13/depot.git"
+set :deploy_to, "/home/#{user}/#{domain}"
  
 # distribute your applications across servers (the 
 # instructions below put them
