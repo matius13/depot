@@ -9,7 +9,7 @@
 class StoreController < ApplicationController
 skip_before_filter :authorize
   def index
-    @products = Product.order(:title)
+    @products = Product.published.order(:title)
     @cart = current_cart
     @visit = incrise_visit
   end
@@ -18,4 +18,11 @@ skip_before_filter :authorize
     session[:visit_counter] ||= 0
     @visit = session[:visit_counter] += 1
   end
+
+  def search
+    @visit = incrise_visit
+    @products=Product.where("title like ?","#{params[:title]}%")
+    render :index
+  end
+
 end

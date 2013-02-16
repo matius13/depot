@@ -9,6 +9,13 @@ gem 'mysql2', '~> 0.3.11'
 
 gem 'capistrano'
 gem 'rvm-capistrano'
+gem 'progress_bar'
+gem 'sunspot_rails'
+
+group :development do
+    gem 'sunspot_solr'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.

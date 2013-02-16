@@ -24,6 +24,9 @@ Depot::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
+get "search" => "store#search"
+get "store/index"
+
   resources :users
 
   resources :orders
